@@ -1,0 +1,802 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Protocolo 4D - Las 4 Dimensiones de una Vida Extraordinaria</title>
+    <meta name="description" content="Próximamente: El primer sistema integrado que optimiza las 4 dimensiones fundamentales de la vida mediante protocolos específicos, medibles y automatizados.">
+    
+    <!-- Open Graph para redes sociales -->
+    <meta property="og:title" content="Protocolo 4D - Las 4 Dimensiones de una Vida Extraordinaria">
+    <meta property="og:description" content="El primer sistema integrado que optimiza Dinero • Desarrollo • Dinamismo • Dominio">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="https://via.placeholder.com/1200x630/3D405B/FFFFFF?text=Protocolo+4D">
+    
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Protocolo 4D">
+    <meta name="twitter:description" content="Las 4 Dimensiones de una Vida Extraordinaria">
+    
+    <!-- Google Fonts optimizado para móvil -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@600;700;800&family=Open+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            /* Dimension Colors */
+            --color-dinero: #81B29A;
+            --color-desarrollo: #F2CC8F;
+            --color-dinamismo: #E07A5F;
+            --color-dominio: #3D405B;
+            
+            /* Base Colors */
+            --color-primary: #3D405B;
+            --color-background: #FAF9F4;
+            --color-background-alt: #F7F5ED;
+            --color-text-primary: #2C2E3A;
+            --color-text-secondary: #6B6E7C;
+            --color-white: #FFFFFF;
+            
+            /* Mobile-first spacing */
+            --space-xs: 6px;
+            --space-sm: 12px;
+            --space-md: 20px;
+            --space-lg: 28px;
+            --space-xl: 36px;
+            --space-xxl: 48px;
+            
+            /* Border Radius */
+            --radius-sm: 8px;
+            --radius-md: 12px;
+            --radius-lg: 16px;
+            --radius-xl: 20px;
+            
+            /* Shadows optimizadas para móvil */
+            --shadow-sm: 0 2px 8px rgba(61, 64, 91, 0.08);
+            --shadow-md: 0 4px 16px rgba(61, 64, 91, 0.12);
+            --shadow-lg: 0 6px 24px rgba(61, 64, 91, 0.15);
+            
+            /* Transitions */
+            --transition-fast: all 0.2s ease;
+            --transition-normal: all 0.3s ease;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Open Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            background: var(--color-background);
+            color: var(--color-text-primary);
+            line-height: 1.5;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+            overflow-x: hidden;
+        }
+        
+        /* Mobile-optimized background */
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(180deg, 
+                rgba(129, 178, 154, 0.03) 0%, 
+                rgba(242, 204, 143, 0.03) 25%, 
+                rgba(224, 122, 95, 0.03) 75%, 
+                rgba(61, 64, 91, 0.03) 100%);
+            z-index: -1;
+        }
+        
+        /* Container mobile-first */
+        .container {
+            width: 100%;
+            padding: 0 var(--space-md);
+            margin: 0 auto;
+        }
+        
+        /* Hero Section - Mobile optimized */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: var(--space-xl) 0;
+            position: relative;
+        }
+        
+        .hero-content {
+            width: 100%;
+            max-width: 100%;
+            z-index: 2;
+        }
+        
+        /* Logo mobile-first */
+        .logo {
+            width: 90px;
+            height: 90px;
+            margin: 0 auto var(--space-lg);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 36px;
+            font-weight: 800;
+            font-family: 'Inter', sans-serif;
+            box-shadow: var(--shadow-lg);
+            position: relative;
+            overflow: hidden;
+            animation: float 6s ease-in-out infinite;
+        }
+        
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-8px); }
+        }
+        
+        /* Typography mobile-first */
+        .hero h1 {
+            font-family: 'Inter', sans-serif;
+            font-size: 32px;
+            font-weight: 800;
+            margin-bottom: var(--space-sm);
+            letter-spacing: -0.02em;
+            background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-dinamismo) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            line-height: 1.2;
+        }
+        
+        .hero .subtitle {
+            font-size: 16px;
+            color: var(--color-text-secondary);
+            margin-bottom: var(--space-xl);
+            font-weight: 500;
+            letter-spacing: 0.01em;
+            line-height: 1.4;
+            padding: 0 var(--space-sm);
+        }
+        
+        .hero .coming-soon {
+            font-size: 13px;
+            color: var(--color-primary);
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            margin-bottom: var(--space-lg);
+            position: relative;
+        }
+        
+        .hero .coming-soon::after {
+            content: '';
+            position: absolute;
+            bottom: -6px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 40px;
+            height: 2px;
+            background: linear-gradient(90deg, var(--color-dinero), var(--color-dinamismo));
+            border-radius: 1px;
+        }
+        
+        .value-prop {
+            font-size: 15px;
+            color: var(--color-text-primary);
+            margin-bottom: var(--space-lg);
+            font-weight: 500;
+            padding: 0 var(--space-sm);
+        }
+        
+        /* Dimensions mobile-first */
+        .dimensions {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: var(--space-sm);
+            margin: var(--space-xl) 0;
+            padding: 0 var(--space-xs);
+        }
+        
+        .dimension-item {
+            padding: var(--space-sm);
+            border-radius: var(--radius-md);
+            font-weight: 600;
+            font-size: 13px;
+            letter-spacing: 0.01em;
+            text-align: center;
+            transition: var(--transition-normal);
+            cursor: default;
+            touch-action: manipulation;
+            -webkit-tap-highlight-color: transparent;
+        }
+        
+        .dimension-item:active {
+            transform: scale(0.98);
+        }
+        
+        .dimension-dinero {
+            background: rgba(129, 178, 154, 0.15);
+            color: #4A7862;
+            border: 1.5px solid rgba(129, 178, 154, 0.3);
+        }
+        
+        .dimension-desarrollo {
+            background: rgba(242, 204, 143, 0.15);
+            color: #9B6B2B;
+            border: 1.5px solid rgba(242, 204, 143, 0.3);
+        }
+        
+        .dimension-dinamismo {
+            background: rgba(224, 122, 95, 0.15);
+            color: #A8442C;
+            border: 1.5px solid rgba(224, 122, 95, 0.3);
+        }
+        
+        .dimension-dominio {
+            background: rgba(61, 64, 91, 0.15);
+            color: var(--color-primary);
+            border: 1.5px solid rgba(61, 64, 91, 0.3);
+        }
+        
+        /* Waitlist Form mobile-first */
+        .waitlist-section {
+            margin-top: var(--space-xxl);
+            background: var(--color-white);
+            padding: var(--space-lg);
+            border-radius: var(--radius-lg);
+            box-shadow: var(--shadow-lg);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(61, 64, 91, 0.08);
+            width: 100%;
+        }
+        
+        .waitlist-form {
+            display: flex;
+            flex-direction: column;
+            gap: var(--space-md);
+            width: 100%;
+        }
+        
+        .form-input {
+            width: 100%;
+            padding: var(--space-md);
+            border: 2px solid var(--color-background-alt);
+            border-radius: var(--radius-md);
+            font-size: 16px; /* Evita zoom en iOS */
+            transition: var(--transition-fast);
+            background: var(--color-white);
+            font-family: 'Open Sans', sans-serif;
+            -webkit-appearance: none;
+            -moz-appearance: none;
+            appearance: none;
+        }
+        
+        .form-input:focus {
+            outline: none;
+            border-color: var(--color-primary);
+            box-shadow: 0 0 0 3px rgba(61, 64, 91, 0.1);
+        }
+        
+        .form-input::placeholder {
+            color: var(--color-text-secondary);
+        }
+        
+        .btn-submit {
+            width: 100%;
+            padding: var(--space-md);
+            background: var(--color-primary);
+            color: var(--color-white);
+            border: none;
+            border-radius: var(--radius-md);
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: var(--transition-fast);
+            font-family: 'Inter', sans-serif;
+            letter-spacing: -0.01em;
+            touch-action: manipulation;
+            -webkit-tap-highlight-color: transparent;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: var(--space-xs);
+            min-height: 52px;
+        }
+        
+        .btn-submit:active {
+            transform: scale(0.98);
+            background: #2C2E3A;
+        }
+        
+        .btn-submit:disabled {
+            opacity: 0.7;
+            cursor: not-allowed;
+            transform: none;
+        }
+        
+        .waitlist-cta {
+            font-size: 13px;
+            color: var(--color-text-secondary);
+            margin-top: var(--space-sm);
+            font-weight: 500;
+            text-align: center;
+            line-height: 1.4;
+        }
+        
+        /* Messages mobile-optimized */
+        .success-message {
+            display: none;
+            background: rgba(129, 178, 154, 0.1);
+            border: 2px solid rgba(129, 178, 154, 0.3);
+            color: #4A7862;
+            padding: var(--space-lg);
+            border-radius: var(--radius-md);
+            text-align: center;
+            font-weight: 600;
+            margin-top: var(--space-md);
+            font-size: 15px;
+            line-height: 1.4;
+        }
+        
+        .error-message {
+            display: none;
+            background: rgba(224, 122, 95, 0.1);
+            border: 2px solid rgba(224, 122, 95, 0.3);
+            color: #A8442C;
+            padding: var(--space-lg);
+            border-radius: var(--radius-md);
+            text-align: center;
+            font-weight: 600;
+            margin-top: var(--space-md);
+            font-size: 15px;
+            line-height: 1.4;
+        }
+        
+        /* Footer mobile-first */
+        .footer {
+            text-align: center;
+            padding: var(--space-xl) var(--space-md);
+            color: var(--color-text-secondary);
+            font-size: 13px;
+            line-height: 1.4;
+        }
+        
+        .footer a {
+            color: var(--color-primary);
+            text-decoration: none;
+            font-weight: 600;
+        }
+        
+        .footer a:active {
+            opacity: 0.7;
+        }
+        
+        /* Loading animation */
+        .btn-loading {
+            animation: spin 1s linear infinite;
+        }
+        
+        @keyframes spin {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+        }
+        
+        /* Page load animation */
+        .hero-content {
+            animation: fadeInUp 0.8s ease-out;
+        }
+        
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        /* Dimension Animation Delays */
+        .dimension-item:nth-child(1) { animation: fadeInUp 0.6s ease-out 0.2s both; }
+        .dimension-item:nth-child(2) { animation: fadeInUp 0.6s ease-out 0.3s both; }
+        .dimension-item:nth-child(3) { animation: fadeInUp 0.6s ease-out 0.4s both; }
+        .dimension-item:nth-child(4) { animation: fadeInUp 0.6s ease-out 0.5s both; }
+        
+        /* Optimizaciones de performance para móvil */
+        * {
+            -webkit-backface-visibility: hidden;
+            backface-visibility: hidden;
+            -webkit-perspective: 1000;
+            perspective: 1000;
+        }
+        
+        /* Tablet adjustments */
+        @media (min-width: 768px) {
+            :root {
+                --space-xs: 8px;
+                --space-sm: 16px;
+                --space-md: 24px;
+                --space-lg: 32px;
+                --space-xl: 48px;
+                --space-xxl: 64px;
+            }
+            
+            .container {
+                max-width: 600px;
+                padding: 0 var(--space-lg);
+            }
+            
+            .logo {
+                width: 110px;
+                height: 110px;
+                font-size: 42px;
+            }
+            
+            .hero h1 {
+                font-size: 42px;
+            }
+            
+            .hero .subtitle {
+                font-size: 18px;
+            }
+            
+            .value-prop {
+                font-size: 16px;
+            }
+            
+            .dimensions {
+                grid-template-columns: repeat(2, 1fr);
+                gap: var(--space-md);
+            }
+            
+            .dimension-item {
+                font-size: 14px;
+                padding: var(--space-md);
+            }
+            
+            .waitlist-form {
+                flex-direction: row;
+                align-items: flex-end;
+            }
+            
+            .form-input {
+                flex: 1;
+            }
+            
+            .btn-submit {
+                width: auto;
+                min-width: 120px;
+                flex-shrink: 0;
+            }
+        }
+        
+        /* Desktop adjustments */
+        @media (min-width: 1024px) {
+            .container {
+                max-width: 800px;
+            }
+            
+            .logo {
+                width: 120px;
+                height: 120px;
+                font-size: 48px;
+            }
+            
+            .hero h1 {
+                font-size: 52px;
+            }
+            
+            .hero .subtitle {
+                font-size: 20px;
+            }
+            
+            .dimensions {
+                grid-template-columns: repeat(4, 1fr);
+                max-width: 600px;
+                margin: var(--space-xl) auto;
+            }
+            
+            .dimension-item {
+                font-size: 15px;
+            }
+            
+            .waitlist-section {
+                max-width: 500px;
+                margin: var(--space-xxl) auto 0;
+            }
+            
+            /* Desktop hover effects */
+            .dimension-item:hover {
+                transform: translateY(-2px);
+                box-shadow: var(--shadow-md);
+            }
+            
+            .btn-submit:hover {
+                background: #2C2E3A;
+                box-shadow: var(--shadow-md);
+            }
+        }
+        
+        /* Optimización para pantallas muy pequeñas */
+        @media (max-width: 360px) {
+            .container {
+                padding: 0 var(--space-sm);
+            }
+            
+            .hero h1 {
+                font-size: 28px;
+            }
+            
+            .hero .subtitle {
+                font-size: 15px;
+            }
+            
+            .logo {
+                width: 80px;
+                height: 80px;
+                font-size: 32px;
+            }
+            
+            .waitlist-section {
+                padding: var(--space-md);
+            }
+        }
+        
+        /* Mejoras de accesibilidad */
+        @media (prefers-reduced-motion: reduce) {
+            *,
+            *::before,
+            *::after {
+                animation-duration: 0.01ms !important;
+                animation-iteration-count: 1 !important;
+                transition-duration: 0.01ms !important;
+            }
+        }
+        
+        /* Dark mode support */
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --color-background: #1a1a1a;
+                --color-background-alt: #2a2a2a;
+                --color-text-primary: #ffffff;
+                --color-text-secondary: #cccccc;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <section class="hero">
+            <div class="hero-content">
+                <!-- Logo -->
+                <div class="logo">
+                    <img src="./image/logo_4d.png" />
+                </div>
+                
+                <!-- Main Content -->
+                <div class="coming-soon">Próximamente</div>
+                <h1>Protocolo 4D</h1>
+                <p class="subtitle">Las 4 Dimensiones de una Vida Extraordinaria</p>
+                
+                <p class="value-prop">
+                    El primer sistema integrado que optimiza
+                </p>
+                
+                <!-- Dimensions -->
+                <div class="dimensions">
+                    <div class="dimension-item dimension-dinero">💰 Dinero</div>
+                    <div class="dimension-item dimension-desarrollo">🧠 Desarrollo</div>
+                    <div class="dimension-item dimension-dinamismo">⚡ Dinamismo</div>
+                    <div class="dimension-item dimension-dominio">👑 Dominio</div>
+                </div>
+                
+                <!-- Waitlist Form -->
+                <div class="waitlist-section">
+                    <form class="waitlist-form" id="waitlistForm" action="https://sendy.todoconta.com/subscribe" method="POST">
+                        <input type="hidden" name="list" value="BsIzjK6j9mempfgWZWO6sQ">
+                        <input type="hidden" name="subform" value="yes">
+                        <input type="hidden" name="submit" value="1">
+                        <input type="hidden" name="boolean" value="true">
+                        
+                        <input 
+                            type="email" 
+                            name="email"
+                            class="form-input" 
+                            placeholder="tu@email.com"
+                            required
+                            id="emailInput"
+                            autocomplete="email"
+                            inputmode="email"
+                        >
+                        <button type="submit" class="btn-submit" id="submitBtn">
+                            <span class="btn-text">Únete a la lista</span>
+                            <span class="btn-loading" style="display: none;">⏳</span>
+                        </button>
+                    </form>
+                    <p class="waitlist-cta">Sé de los primeros en acceder al sistema completo</p>
+                    
+                    <div class="success-message" id="successMessage">
+                        ✅ ¡Perfecto! Te notificaremos cuando esté listo el Protocolo 4D.
+                    </div>
+                    
+                    <div class="error-message" id="errorMessage">
+                        ❌ Hubo un error. Por favor intenta de nuevo.
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+    
+    <footer class="footer">
+        <p>Una iniciativa de <a href="#">Israel Castro</a> • 2025</p>
+    </footer>
+    
+    <script>
+        // Enhanced mobile-first form handling with Sendy integration
+        document.getElementById('waitlistForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const form = document.getElementById('waitlistForm');
+            const submitBtn = document.getElementById('submitBtn');
+            const btnText = submitBtn.querySelector('.btn-text');
+            const btnLoading = submitBtn.querySelector('.btn-loading');
+            const successMessage = document.getElementById('successMessage');
+            const errorMessage = document.getElementById('errorMessage');
+            const emailInput = document.getElementById('emailInput');
+            
+            // Hide any previous messages
+            successMessage.style.display = 'none';
+            errorMessage.style.display = 'none';
+            
+            // Show loading state
+            btnText.style.display = 'none';
+            btnLoading.style.display = 'inline';
+            submitBtn.disabled = true;
+            
+            // Add haptic feedback on mobile
+            if ('vibrate' in navigator) {
+                navigator.vibrate(50);
+            }
+            
+            // Create FormData from the form
+            const formData = new FormData(form);
+            
+            // Submit to Sendy using fetch
+            fetch('https://sendy.todoconta.com/subscribe', {
+                method: 'POST',
+                body: formData,
+                mode: 'cors'
+            })
+            .then(response => response.text())
+            .then(data => {
+                // Sendy returns different responses
+                if (data.includes('true') || data.includes('Already subscribed') || data.includes('subscribed')) {
+                    // Success - hide form and show success message
+                    form.style.display = 'none';
+                    successMessage.style.display = 'block';
+                    
+                    // Smooth scroll to success message on mobile
+                    successMessage.scrollIntoView({ 
+                        behavior: 'smooth', 
+                        block: 'center' 
+                    });
+                    
+                    // Haptic feedback for success
+                    if ('vibrate' in navigator) {
+                        navigator.vibrate([100, 50, 100]);
+                    }
+                    
+                    // Analytics event
+                    if (typeof gtag !== 'undefined') {
+                        gtag('event', 'sign_up', {
+                            method: 'email',
+                            event_category: 'engagement',
+                            event_label: 'protocolo_4d_waitlist'
+                        });
+                    }
+                    
+                    // Track conversion for social media pixels
+                    if (typeof fbq !== 'undefined') {
+                        fbq('track', 'Lead', {
+                            content_name: 'Protocolo 4D Waitlist',
+                            content_category: 'sign_up'
+                        });
+                    }
+                    
+                    console.log('Successfully subscribed to Protocolo 4D waitlist');
+                } else {
+                    throw new Error('Subscription failed');
+                }
+            })
+            .catch(error => {
+                console.error('Subscription error:', error);
+                
+                // Show error message
+                errorMessage.style.display = 'block';
+                
+                // Reset button state
+                btnText.style.display = 'inline';
+                btnLoading.style.display = 'none';
+                submitBtn.disabled = false;
+                
+                // Scroll to error message
+                errorMessage.scrollIntoView({ 
+                    behavior: 'smooth', 
+                    block: 'center' 
+                });
+                
+                // Error haptic feedback
+                if ('vibrate' in navigator) {
+                    navigator.vibrate([50, 50, 50]);
+                }
+            });
+        });
+        
+        // Mobile optimizations
+        document.addEventListener('DOMContentLoaded', function() {
+            // Prevent zoom on input focus for iOS
+            const viewport = document.querySelector('meta[name=viewport]');
+            if (viewport) {
+                viewport.content = 'width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no';
+            }
+            
+            // Add loading animation
+            document.body.style.opacity = '0';
+            document.body.style.transition = 'opacity 0.3s ease';
+            
+            setTimeout(() => {
+                document.body.style.opacity = '1';
+            }, 50);
+            
+            // Optimize scrolling on mobile
+            document.body.style.webkitOverflowScrolling = 'touch';
+            
+            // Track page view for analytics
+            if (typeof gtag !== 'undefined') {
+                gtag('event', 'page_view', {
+                    page_title: 'Protocolo 4D Landing',
+                    page_location: window.location.href,
+                    content_group1: 'waitlist'
+                });
+            }
+        });
+        
+        // Track social media source
+        const urlParams = new URLSearchParams(window.location.search);
+        const source = urlParams.get('utm_source') || 'direct';
+        const medium = urlParams.get('utm_medium') || 'none';
+        
+        // Store source for analytics
+        if (typeof gtag !== 'undefined') {
+            gtag('config', 'GA_MEASUREMENT_ID', {
+                custom_map: {'dimension1': 'traffic_source'},
+            });
+            
+            gtag('event', 'page_view', {
+                traffic_source: source,
+                utm_medium: medium
+            });
+        }
+        
+        // Mobile-specific touch interactions
+        document.querySelectorAll('.dimension-item').forEach(item => {
+            item.addEventListener('touchstart', function() {
+                this.style.opacity = '0.8';
+            });
+            
+            item.addEventListener('touchend', function() {
+                this.style.opacity = '1';
+            });
+        });
+    </script>
+</body>
+</html>
