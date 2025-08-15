@@ -124,6 +124,8 @@
             width: 90px;
             height: 90px;
             margin: 0 auto var(--space-lg);
+            background: linear-gradient(135deg, var(--color-dominio) 0%, var(--color-dinero) 100%);
+            border-radius: var(--radius-lg);
             display: flex;
             align-items: center;
             justify-content: center;
@@ -135,6 +137,18 @@
             position: relative;
             overflow: hidden;
             animation: float 6s ease-in-out infinite;
+        }
+        
+        .logo::after {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 70%;
+            height: 70%;
+            border: 2px solid rgba(255, 255, 255, 0.3);
+            border-radius: var(--radius-sm);
         }
         
         @keyframes float {
@@ -258,68 +272,29 @@
             width: 100%;
         }
         
-        .waitlist-form {
-            display: flex;
-            flex-direction: column;
-            gap: var(--space-md);
+        /* Substack Integration */
+        .substack-wrapper {
             width: 100%;
-        }
-        
-        .form-input {
-            width: 100%;
-            padding: var(--space-md);
-            border: 2px solid var(--color-background-alt);
             border-radius: var(--radius-md);
-            font-size: 16px; /* Evita zoom en iOS */
-            transition: var(--transition-fast);
+            overflow: hidden;
+            box-shadow: var(--shadow-sm);
+            border: 2px solid var(--color-background-alt);
+            transition: var(--transition-normal);
             background: var(--color-white);
-            font-family: 'Open Sans', sans-serif;
-            -webkit-appearance: none;
-            -moz-appearance: none;
-            appearance: none;
+            position: relative;
         }
         
-        .form-input:focus {
-            outline: none;
+        .substack-wrapper:hover {
             border-color: var(--color-primary);
             box-shadow: 0 0 0 3px rgba(61, 64, 91, 0.1);
         }
         
-        .form-input::placeholder {
-            color: var(--color-text-secondary);
-        }
-        
-        .btn-submit {
-            width: 100%;
-            padding: var(--space-md);
-            background: var(--color-primary);
-            color: var(--color-white);
+        #substackEmbed {
             border: none;
-            border-radius: var(--radius-md);
-            font-size: 16px;
-            font-weight: 600;
-            cursor: pointer;
-            transition: var(--transition-fast);
-            font-family: 'Inter', sans-serif;
-            letter-spacing: -0.01em;
-            touch-action: manipulation;
-            -webkit-tap-highlight-color: transparent;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: var(--space-xs);
-            min-height: 52px;
-        }
-        
-        .btn-submit:active {
-            transform: scale(0.98);
-            background: #2C2E3A;
-        }
-        
-        .btn-submit:disabled {
-            opacity: 0.7;
-            cursor: not-allowed;
-            transform: none;
+            background: transparent;
+            display: block;
+            width: 100%;
+            min-height: 150px;
         }
         
         .waitlist-cta {
@@ -578,9 +553,7 @@
         <section class="hero">
             <div class="hero-content">
                 <!-- Logo -->
-                <div class="logo">
-                    <img src="./image/logo_4d.png" />
-                </div>
+                <div class="logo">4D</div>
                 
                 <!-- Main Content -->
                 <div class="coming-soon">Próximamente</div>
@@ -601,36 +574,18 @@
                 
                 <!-- Waitlist Form -->
                 <div class="waitlist-section">
-                    <form class="waitlist-form" id="waitlistForm" action="https://sendy.todoconta.com/subscribe" method="POST">
-                        <input type="hidden" name="list" value="BsIzjK6j9mempfgWZWO6sQ">
-                        <input type="hidden" name="subform" value="yes">
-                        <input type="hidden" name="submit" value="1">
-                        <input type="hidden" name="boolean" value="true">
-                        
-                        <input 
-                            type="email" 
-                            name="email"
-                            class="form-input" 
-                            placeholder="tu@email.com"
-                            required
-                            id="emailInput"
-                            autocomplete="email"
-                            inputmode="email"
-                        >
-                        <button type="submit" class="btn-submit" id="submitBtn">
-                            <span class="btn-text">Únete a la lista</span>
-                            <span class="btn-loading" style="display: none;">⏳</span>
-                        </button>
-                    </form>
+                    <div class="substack-wrapper">
+                        <iframe 
+                            src="https://protocolo4d.substack.com/embed" 
+                            width="100%" 
+                            height="150" 
+                            frameborder="0" 
+                            scrolling="no"
+                            id="substackEmbed"
+                            title="Suscríbete al Protocolo 4D">
+                        </iframe>
+                    </div>
                     <p class="waitlist-cta">Sé de los primeros en acceder al sistema completo</p>
-                    
-                    <div class="success-message" id="successMessage">
-                        ✅ ¡Perfecto! Te notificaremos cuando esté listo el Protocolo 4D.
-                    </div>
-                    
-                    <div class="error-message" id="errorMessage">
-                        ❌ Hubo un error. Por favor intenta de nuevo.
-                    </div>
                 </div>
             </div>
         </section>
@@ -641,107 +596,7 @@
     </footer>
     
     <script>
-        // Enhanced mobile-first form handling with Sendy integration
-        document.getElementById('waitlistForm').addEventListener('submit', function(e) {
-            e.preventDefault();
-            
-            const form = document.getElementById('waitlistForm');
-            const submitBtn = document.getElementById('submitBtn');
-            const btnText = submitBtn.querySelector('.btn-text');
-            const btnLoading = submitBtn.querySelector('.btn-loading');
-            const successMessage = document.getElementById('successMessage');
-            const errorMessage = document.getElementById('errorMessage');
-            const emailInput = document.getElementById('emailInput');
-            
-            // Hide any previous messages
-            successMessage.style.display = 'none';
-            errorMessage.style.display = 'none';
-            
-            // Show loading state
-            btnText.style.display = 'none';
-            btnLoading.style.display = 'inline';
-            submitBtn.disabled = true;
-            
-            // Add haptic feedback on mobile
-            if ('vibrate' in navigator) {
-                navigator.vibrate(50);
-            }
-            
-            // Create FormData from the form
-            const formData = new FormData(form);
-            
-            // Submit to Sendy using fetch
-            fetch('https://sendy.todoconta.com/subscribe', {
-                method: 'POST',
-                body: formData,
-                mode: 'cors'
-            })
-            .then(response => response.text())
-            .then(data => {
-                // Sendy returns different responses
-                if (data.includes('true') || data.includes('Already subscribed') || data.includes('subscribed')) {
-                    // Success - hide form and show success message
-                    form.style.display = 'none';
-                    successMessage.style.display = 'block';
-                    
-                    // Smooth scroll to success message on mobile
-                    successMessage.scrollIntoView({ 
-                        behavior: 'smooth', 
-                        block: 'center' 
-                    });
-                    
-                    // Haptic feedback for success
-                    if ('vibrate' in navigator) {
-                        navigator.vibrate([100, 50, 100]);
-                    }
-                    
-                    // Analytics event
-                    if (typeof gtag !== 'undefined') {
-                        gtag('event', 'sign_up', {
-                            method: 'email',
-                            event_category: 'engagement',
-                            event_label: 'protocolo_4d_waitlist'
-                        });
-                    }
-                    
-                    // Track conversion for social media pixels
-                    if (typeof fbq !== 'undefined') {
-                        fbq('track', 'Lead', {
-                            content_name: 'Protocolo 4D Waitlist',
-                            content_category: 'sign_up'
-                        });
-                    }
-                    
-                    console.log('Successfully subscribed to Protocolo 4D waitlist');
-                } else {
-                    throw new Error('Subscription failed');
-                }
-            })
-            .catch(error => {
-                console.error('Subscription error:', error);
-                
-                // Show error message
-                errorMessage.style.display = 'block';
-                
-                // Reset button state
-                btnText.style.display = 'inline';
-                btnLoading.style.display = 'none';
-                submitBtn.disabled = false;
-                
-                // Scroll to error message
-                errorMessage.scrollIntoView({ 
-                    behavior: 'smooth', 
-                    block: 'center' 
-                });
-                
-                // Error haptic feedback
-                if ('vibrate' in navigator) {
-                    navigator.vibrate([50, 50, 50]);
-                }
-            });
-        });
-        
-        // Mobile optimizations
+        // Enhanced mobile-first functionality with Substack integration
         document.addEventListener('DOMContentLoaded', function() {
             // Prevent zoom on input focus for iOS
             const viewport = document.querySelector('meta[name=viewport]');
@@ -768,6 +623,54 @@
                     content_group1: 'waitlist'
                 });
             }
+            
+            // Custom styling for Substack iframe (injected via postMessage if possible)
+            const substackEmbed = document.getElementById('substackEmbed');
+            
+            // Listen for iframe load to apply custom styling
+            substackEmbed.addEventListener('load', function() {
+                console.log('Substack embed loaded successfully');
+                
+                // Try to communicate with iframe to apply custom styles
+                try {
+                    // This will only work if Substack allows cross-origin communication
+                    substackEmbed.contentWindow.postMessage({
+                        type: 'applyCustomStyles',
+                        styles: {
+                            fontFamily: "'Open Sans', sans-serif",
+                            primaryColor: '#3D405B',
+                            borderRadius: '12px'
+                        }
+                    }, '*');
+                } catch (e) {
+                    // Cross-origin restrictions apply, which is expected
+                    console.log('Substack iframe styling limited by CORS policy');
+                }
+            });
+            
+            // Handle Substack subscription events (if available)
+            window.addEventListener('message', function(event) {
+                // Listen for Substack subscription events
+                if (event.origin === 'https://protocolo4d.substack.com') {
+                    if (event.data.type === 'subscription_success') {
+                        // Track successful subscription
+                        if (typeof gtag !== 'undefined') {
+                            gtag('event', 'sign_up', {
+                                method: 'email',
+                                event_category: 'engagement',
+                                event_label: 'protocolo_4d_substack'
+                            });
+                        }
+                        
+                        // Haptic feedback for success
+                        if ('vibrate' in navigator) {
+                            navigator.vibrate([100, 50, 100]);
+                        }
+                        
+                        console.log('Successfully subscribed to Protocolo 4D via Substack');
+                    }
+                }
+            });
         });
         
         // Track social media source
